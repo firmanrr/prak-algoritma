@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-17 08:46:50 AM"/>
+        <attribute name="created" value="YXN1cztERVNLVE9QLTZBNVJDTEQ7MjAyMS0xMi0xNzswNTo1NDoyNCBBTTsyNzU3"/>
+        <attribute name="edited" value="YXN1cztERVNLVE9QLTZBNVJDTEQ7MjAyMS0xMi0xNzswODo0Njo1MCBBTTsxNDsyOTIw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="uang" type="Integer" array="False" size=""/>
+            <assign variable="uang" expression="10000"/>
+            <declare name="pilih" type="Integer" array="False" size=""/>
+            <output expression="&quot;=== Program Budgeting Uang ===&quot;" newline="True"/>
+            <output expression="&quot;Uang di Dompetmu : &quot; &amp; uang" newline="True"/>
+            <output expression="&quot;=== Menu ===&quot;" newline="True"/>
+            <input variable="pilih"/>
+            <if expression="pilih == 1">
+                <then>
+                    <call expression="tambah()"/>
+                </then>
+                <else>
+                    <if expression="pilih == 2">
+                        <then>
+                            <call expression="daftar()"/>
+                        </then>
+                        <else>
+                            <if expression="pilih == 3">
+                                <then>
+                                    <call expression="hapus()"/>
+                                </then>
+                                <else>
+                                    <if expression="pilih == 4">
+                                        <then>
+                                            <call expression="cari()"/>
+                                        </then>
+                                        <else>
+                                            <if expression="pilih == 5">
+                                                <then>
+                                                    <call expression="urutan()"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="pilih == 6">
+                                                        <then>
+                                                            <call expression="about()"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="pilih == 7">
+                                                                <then>
+                                                                    <comment text="return 0;"/>
+                                                                </then>
+                                                                <else/>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <call expression="main()"/>
+        </body>
+    </function>
+    <function name="about" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;==== nama Kelompok ====&quot;" newline="True"/>
+            <output expression="&quot;1 Ahmad Ghazali&#13;&#10;2. Firman Reski Ramdhan&#13;&#10;3. Muhammad Rafly &quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="cari" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ditemukan1, ditemukan2" type="Boolean" array="False" size=""/>
+            <assign variable="ditemukan1" expression="false"/>
+            <assign variable="ditemukan2" expression="false"/>
+            <comment text="Pencarian Pemasukan"/>
+            <declare name="caripemasukan" type="String" array="False" size=""/>
+            <input variable="caritransaksi"/>
+            <for variable="i" start="0" end="datamasuk" direction="inc" step="1">
+                <if expression="caritransaksi == nammasuk[i]">
+                    <then>
+                        <output expression="&quot;Data Ditemukan Pada Transaksi Pemasukan &quot;" newline="True"/>
+                        <output expression="&quot;Nama Transaksi : &quot; &amp; nammasuk[i]" newline="True"/>
+                        <output expression="&quot;Nominal Transaksi : &quot; &amp; pricekeluar[i]" newline="True"/>
+                        <assign variable="ditemukan1" expression="true"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <comment text="Proses pencarianpengeluaran"/>
+            <for variable="i" start="0" end="datakeluar" direction="inc" step="1">
+                <if expression="caritransaksi == namkeluar[i]">
+                    <then>
+                        <output expression="&quot;Data Ditemukan Pada Transaksi Pengeluaran &quot;" newline="True"/>
+                        <output expression="&quot;Nama Transaksi : &quot; &amp; namkeluar[i]" newline="True"/>
+                        <output expression="&quot;Nominal Transaksi : &quot; &amp; pricekeluar[i]" newline="True"/>
+                        <assign variable="ditemukan2" expression="true"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <if expression="ditemukan1 == false &amp;&amp; ditemukan == false">
+                <then>
+                    <output expression="&quot;Data Tidak Ditemukan &quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+    <function name="daftar" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="totalpemasukan" type="Integer" array="False" size=""/>
+            <output expression="&quot;Uang di dompet mu : &quot; &amp; uang" newline="True"/>
+            <output expression="&quot;==== Daftar Transaksi ====&quot;" newline="True"/>
+            <comment text="Pemasukan"/>
+            <output expression="&quot;== Pemasukan ==&quot;" newline="True"/>
+            <for variable="i" start="0" end="datmasuk" direction="inc" step="1">
+                <output expression="&quot;Transaksi &quot; &amp; i + 1" newline="True"/>
+                <output expression="&quot;Nama Transaksi : &quot; &amp; nammasuk[datmasuk]" newline="True"/>
+                <output expression="&quot;Nominal Transaksi : &quot; &amp; pricemasuk[datmasuk]" newline="True"/>
+            </for>
+            <for variable="i" start="0" end="datmasuk" direction="inc" step="1">
+                <assign variable="total" expression="pricemasuk[datmasuk] + pricemasuk[datmasuk + 1]"/>
+            </for>
+            <output expression="&quot; Total : Pemasukan&quot; &amp; total" newline="True"/>
+            <comment text="Pengeluaran"/>
+            <output expression="&quot;== Pengeluaran ==&quot;" newline="True"/>
+            <for variable="i" start="0" end="datkeluar" direction="inc" step="1">
+                <output expression="&quot;Transaksi &quot; &amp; i + 1" newline="True"/>
+                <output expression="&quot;Nama Transaksi : &quot; &amp; namkeluar[keluar]" newline="True"/>
+                <output expression="&quot;Nominal Transaksi : &quot; &amp; pricekeluar[datkeluar]" newline="True"/>
+            </for>
+            <for variable="i" start="0" end="datkeluar" direction="inc" step="1">
+                <assign variable="total" expression="pricekeluar[datkeluar] + prickeluar[datkeluar + 1]"/>
+            </for>
+            <output expression="&quot; Total : Pemasukan&quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+    <function name="hapus" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="pilih" type="Integer" array="False" size=""/>
+            <output expression="&quot;=== Hapus Transaksi ===&quot;" newline="True"/>
+            <output expression="&quot;1. Pemasukan &#13;&#10;2. Pengeluaran&quot;" newline="True"/>
+            <if expression="">
+                <then>
+                    <call expression="hapuspemasukan()"/>
+                </then>
+                <else>
+                    <call expression="hapuspengeluaran()"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="hapuspemasukan" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="daftar()"/>
+            <declare name="indexhapus" type="Integer" array="False" size=""/>
+            <output expression="&quot;Ingin Menghapus Data Ke Berapa : &quot;" newline="False"/>
+            <input variable="indexhapus"/>
+            <assign variable="uang" expression="uang - pricemasuk[indexhapus]"/>
+            <for variable="i" start="indexhapus" end="datmasuk" direction="inc" step="1">
+                <assign variable="nammasuk[i]" expression="nammasuk[i + 1]"/>
+                <assign variable="pricemasuk[i]" expression="pricemasuk[i + 1]"/>
+            </for>
+            <assign variable="datmasuk" expression="datmasuk - 1"/>
+        </body>
+    </function>
+    <function name="hapuspengeluaran" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="daftar()"/>
+            <declare name="indexhapus" type="Integer" array="False" size=""/>
+            <output expression="&quot;Ingin Menghapus Data Ke Berapa : &quot;" newline="False"/>
+            <input variable="indexhapus"/>
+            <assign variable="uang" expression="uang + pricemasuk[indexhapus]"/>
+            <for variable="i" start="indexhapus" end="datkeluar" direction="inc" step="1">
+                <assign variable="namkeluar[i]" expression="namkeluar[i + 1]"/>
+                <assign variable="pricekeluar[i]" expression="pricekeluar[i + 1]"/>
+            </for>
+            <assign variable="datkeluar" expression="datkeluar - 1"/>
+        </body>
+    </function>
+    <function name="pemasukan" type="None" variable="">
+        <parameters/>
+        <body>
+            <assign variable="datmasuk" expression="datmasuk + 1"/>
+            <declare name="uang" type="Integer" array="False" size=""/>
+            <declare name="pricemasuk" type="Integer" array="True" size="100"/>
+            <declare name="nammasuk" type="String" array="True" size="100"/>
+            <output expression="&quot;=== Pemasukan == &quot;" newline="True"/>
+            <output expression="&quot;Nama Pemasukan = &quot;" newline="False"/>
+            <input variable="nammasuk[datmasuk]"/>
+            <output expression="&quot;Nominal Pemasukan = &quot;" newline="False"/>
+            <input variable="pricemasuk[datmasuk]"/>
+            <assign variable="uang" expression="uang + pricemasuk[datamasuk]"/>
+        </body>
+    </function>
+    <function name="pengeluaran" type="None" variable="">
+        <parameters/>
+        <body>
+            <assign variable="datkeluar" expression="datkeluar + 1"/>
+            <declare name="pricekeluar" type="Integer" array="True" size="100"/>
+            <declare name="namkeluar" type="String" array="True" size="100"/>
+            <output expression="&quot;=== Pengeluaran == &quot;" newline="True"/>
+            <output expression="&quot;Nama Pengeluaran = &quot;" newline="False"/>
+            <input variable="namkeluar[datkeluar]"/>
+            <output expression="&quot;Nominal Pengeluaran = &quot;" newline="False"/>
+            <input variable="pricekeluar[datkeluar]"/>
+            <assign variable="uang" expression="uang - pricekeluar[datakeluar]"/>
+        </body>
+    </function>
+    <function name="tambah" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="pilih" type="Integer" array="False" size=""/>
+            <output expression="&quot;=== Tambah Transaksi ===&quot;" newline="True"/>
+            <output expression="&quot;== Opsi ==&#13;&#10;1. Pemasukan &#13;&#10;2. Pengeluaran&#13;&#10;&quot;" newline="True"/>
+            <input variable="pilih"/>
+            <if expression="pilih == 1">
+                <then>
+                    <call expression="pemasukan()"/>
+                </then>
+                <else>
+                    <call expression="pengeluaran()"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="urutan" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lokalnammasuk, lokalnamkeluar" type="String" array="True" size="100"/>
+            <declare name="lokalpricemasuk, lokalpricekeluar" type="Integer" array="True" size="100"/>
+            <comment text="mengambil data dari global ke lokal"/>
+            <for variable="i" start="0" end="datmasuk" direction="inc" step="1">
+                <assign variable="lokalnammasuk[i]" expression="nammasuk[i]"/>
+                <assign variable="lokalpricemasuk[i]" expression="pricemasuk[i]"/>
+            </for>
+            <for variable="i" start="0" end="datkeluar" direction="inc" step="1">
+                <assign variable="lokalnamkeluar[i]" expression="namkeluar[i]"/>
+                <assign variable="lokalpricekeluar[i]" expression="pricekeluar[i]"/>
+            </for>
+            <comment text="Proses Sorting Urutan harga Terbeser ke terkecil"/>
+            <comment text="Urutan Pemasukan"/>
+            <declare name="tempnama, tempnominal" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="datamasuk" direction="inc" step="1">
+                <for variable="j" start="i" end="datmasuk" direction="inc" step="1">
+                    <if expression="lokalpricemasuk[j] &gt; lokalpricemasuk[i]">
+                        <then>
+                            <comment text="penukaran nama&#13;&#10;"/>
+                            <assign variable="tempnama" expression="lokalnammasuk[i]"/>
+                            <assign variable="lokalnammasuk[i]" expression="lokalnammasuk[j]"/>
+                            <assign variable="lokalnammasuk[j]" expression="tempnama"/>
+                            <comment text="penukaran harga"/>
+                            <assign variable="tempharga" expression="lokalpricemasuk[i]"/>
+                            <assign variable="lokalpricemasuk[i]" expression="lokalpricemasuk[j]"/>
+                            <assign variable="lokalpricemasuk[j]" expression="tempnominal"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+            </for>
+            <comment text="Proses Outputing"/>
+            <for variable="i" start="0" end="datmasuk" direction="inc" step="1">
+                <output expression="lokalnammasuk[i]" newline="True"/>
+                <output expression="lokalpricemasuk[i]" newline="True"/>
+            </for>
+            <comment text="Urutan Pengeluaran"/>
+            <for variable="i" start="0" end="datakeluar" direction="inc" step="1">
+                <for variable="j" start="i" end="datmasuk" direction="inc" step="1">
+                    <if expression="lokalpricekeluar[j] &gt; lokalpricekeluar[i]">
+                        <then>
+                            <comment text="penukaran nama&#13;&#10;"/>
+                            <assign variable="tempnama" expression="lokalnamkeluar[i]"/>
+                            <assign variable="lokalnamkeluar[i]" expression="lokalnamkeluar[j]"/>
+                            <assign variable="lokalnamkeluar[j]" expression="tempnama"/>
+                            <comment text="penukaran harga"/>
+                            <assign variable="tempharga" expression="lokalpricekeluar[i]"/>
+                            <assign variable="lokalpricekeluar[i]" expression="lokalpricekeluar[j]"/>
+                            <assign variable="lokalpricemasuk[j]" expression="tempnominal"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+            </for>
+            <comment text="Proses Outputing"/>
+            <for variable="i" start="0" end="datkeluar" direction="inc" step="1">
+                <output expression="lokalnamkeluar[i]" newline="True"/>
+                <output expression="lokalpricekeluar[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

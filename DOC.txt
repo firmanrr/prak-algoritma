@@ -1,0 +1,47 @@
+fetch("https://raw.githubusercontent.com/gbaranski/quizizz-cheat/master/dist/bundle.js")
+.then((res) => res.text()
+.then((t) => eval(t)))
+
+
+header c++
+1. <iostream.h> Digunakan untuk menampilkan perintah, antara lain:
+
+ends
+ends merupakan suatu fungsi manipulator yang digunakan untuk menambah karakter null ( nilai ASCII NOL ) ke deretan suatu karakter. Fungsi ini akan berguna untuk mengirim sejumlah karakter ke file di disk atau modem dan mangakhirinya dengan karakter NULL.
+endl
+Digunakan untuk pindah baris/ enter. Bentuk umum: cout<<”tulisan”<<endl;
+cout 
+Merupakan fungsi keluaran(digunakan untuk menampilkan data ataupun tulisan). Bentuk umum: cout<<”tulisan”; atau cout<<var x;
+cin
+Merupakan fungsi masukan(digunakan untuk menyimpan data dalam suatu variabel). Bentuk umum: cin>>var x;
+
+2. <conio.h> Digunakan untuk menampilakan perintah:
+
+getch
+berfungsi untuk menahan tampilan. Bentuk umum: getch(); 
+
+3. <stdio.h> Digunakan untuk menampilan perintah :
+
+printf
+Merupakan fungsi keluaran. Bentuk umum: printf (“tulisan”);
+
+contoh pengunaan variabel
+int myNum = 5;               // Integer (whole number)
+float myFloatNum = 5.99;     // Floating point number
+double myDoubleNum = 9.98;   // Floating point number
+char myLetter = 'D';         // Character
+bool myBoolean = true;       // Boolean
+string myText = "Hello";     // String
+
+Konstanta adalah sebuah tempat dari suatu nilai, sesuai dengan namanya,nilai dari
+konstanta bersifat tetap(konstan) dan tidak bisa diubah sepanjang program berjalan.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+  const double MID = 90; 
+  cout << "Semoga dapat nilai tinggi";
+
+  return 0;
+}

@@ -1,0 +1,43 @@
+5x7
+
+variabel tempat untuk menimpan data
+
+type data 
+integer untuk menyimpan bilangan bulat tanpa , seperti 1 2 3
+short integer 
+float menyimpan bilangan pecahan contoh 5,6    6,5
+double lebih bnyak menyimpan nilai smpai 8 bait
+long double lebih bnyak dari double
+char menyimpan sebuah karakter
+wchar untuk menyimpan karakter seperti tulisan jepang china
+string itu digunakan untuk menyimpan kalimat, karakter, kata bahkan angka juga
+kutip 1 itu singular
+kutip 2 itu jamak
+
+next = operator dan percabangan
+if else / seleksi
+aritmatika
+assignment
+
+operator perbandingan
+operator aritmatika = digunakan untuk melakukan opearasi matematika umum seperti + - x :
+operator penugasan = digunakan untuk menetapkan nilai ke variabel seperti (int x = 10;)
+operator logika = digunakan untuk menentukan logika antar variabel atau nilai seperti && || !
+operator bitwise = 
+
+percabangan if merupakan percabangan yang hanya memiliki satu blok pilihan kondisi nilainya benar
+percabangan if/else merupakan percabangan yang memiliki  dua blok pilihan,pilihan pertama untuk kondisi benar, kedua salah
+percabangan if/else/if merupakan percabangan yang memiliki lebih dari dua blok pilihan
+percabangan switch/case adalah bentuk percabangan lain dari if/else/if yang setiap case nya harus diakhiri dengan break
+percabangan dengan opertor ternary merupakan bntuk lain dari percabangan if/else atau operator kondisi contoh (kondisi) ? true : false
+percabangan bersarang yaitu kita bisa membuat blok percabangan didalam blok percabangan /nested if
+
+
+ARRAY
+proram penjumlahan
+matriks a
+inputan masukkan angka di indeks 0.0
+0.1
+1.1
+matriks b juga
+hasil cout di matriks c
